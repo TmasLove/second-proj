@@ -1,0 +1,102 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1.index {
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+a.log{
+  padding-left: 200px;
+}
+
+
+.container {
+  height: 80px;
+  width: 250px;
+  border: 1px dashed black;
+  position: relative;
+  text-align: center;
+  left: 450px;
+}
+
+.container2 {
+  height: 300px;
+  width: 550px;
+  border: 1px dotted black;
+  position: relative;
+  left: 300px;
+}
+
+.container3 {
+  height: 380px;
+  width: 550px;
+  left: 280px;
+  position: relative;
+  border: 1px solid black;
+
+}
+
+
+.error-message {
+  margin: 0 auto;
+  width: 380px;
+  color: #f02b63;
+  border: 1px solid #f02b64;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+}
+
+p.signup {
+  text-align: center;
+}
+
+#form {
+  margin: 30px auto;
+  width: 380px;
+}
+
+#form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+#form input,
+#form button {
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+#form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+#form button:hover {
+  background: #fff;
+  color: #43a3e6;
+  transition: .3s ease background;
+}

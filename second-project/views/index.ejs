@@ -1,0 +1,14 @@
+<h1 class="index">FollowMeme</h1>
+
+<div class="container">
+
+<% if(typeof currentUser === 'object') { %>
+            <!-- If we got the logged in user variable  -->
+  <p> Hello, <%= currentUser.username%>! </p>
+<% } else { %>
+        <!-- If we DIDNT GET the logged in user variable -->
+    <h3> Please login to continue</h3>
+    <a href="/login"> <b>Log In </a></br>
+<% } %>
+
+</div>
