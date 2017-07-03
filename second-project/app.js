@@ -5,6 +5,18 @@ const logger       = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
+const mongoose     = require('mongoose');
+const session      = require('express-session');
+const passport    = require('passport');
+
+//Import the "dotenv" package and load variales from the ".env" file
+//(must be at the top, before we try to use the )
+require('dotenv').config();
+
+require('./config/passport-config.js');
+
+
+mongoose.connect(process.env.MONGODB_URI);
 
 
 const app = express();
@@ -24,6 +36,30 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(session({
+  // the value of secret doesn't matter except it has to be different for every app
+  secret: 'gkejsfl bKEJFBlwkswecfjk jhedsv c',
+  resave: true,
+  saveUninitialized: true
+}));  // 2 parentheses: 1 for the "app.use"( "and another for "session"("
+//-----------------------------------------------------------------------------
+//passport middlewears, these need to come after the app.use(session(....));
+app.use(passport.initialize());
+app.use(passport.session());
+//-----passport middlewears ^^ -------------------------------------------------
+
+//THIS MIDDLEWARE CREATES the "currentUser" for ALL VIEWS
+// (if the user is logged in)
+// (this needs to be below passport and before your routes)
+app.use((req, res, next) => {
+//"req.user" is defined by the passport middleware
+if (req.user) {
+  // Create the "currentUser" local variable for all views
+  res.locals.currentUser = req.user;
+}
+// if you dont do next() your pages will load forever
+  next();
+});
 
 //ROUTES GO HERE ------------------------------------------------------------
 const index = require('./routes/index');

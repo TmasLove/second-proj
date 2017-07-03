@@ -5,11 +5,11 @@ mongoose.connect('mongodb://localhost/second-project');
 const User = require('../models/user-model.js');
 
 
-const userArray = [
+const myUserArray = [
   {
     fullName: 'Tommy',
-    username: 'tomcat',
-    password: 'password1234'
+    username: 'Admin',
+    password: 'admin'
 
   }
 

@@ -14,6 +14,19 @@ a.log{
   padding-left: 200px;
 }
 
+.img {
+  position: relative;
+    left: 445px;
+    top: 15px;
+}
+
+img.iphone {
+  width: 130px;
+}
+
+img.android {
+  width: 130px;
+}
 
 .container {
   height: 80px;
@@ -99,4 +112,27 @@ p.signup {
   background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
+}
+
+
+/*USER PROFILE*/
+
+.left-column {
+  float: left;
+}
+
+.personal-info {
+  position: relative;
+}
+
+.left-column {
+  padding-right: 30px;
+}
+
+
+.form-horizontal {
+  display: inline-block;
+  left: 50px;
+  position: relative;
+  bottom: 60px;
 }

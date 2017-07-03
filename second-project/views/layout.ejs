@@ -10,9 +10,11 @@
         <a href="/"> Home </a>
         <br>
     <% if (typeof currentUser === 'object') { %>
-        <a href="/logout"> Log Out </a>
+        <a href="/edit-user"> Edit Profile </a>
         <br>
-        <a href="/special"> Members </a>
+        <a href="/special"> Feed </a>
+        <br>
+        <a href="/logout"> Log Out </a>
     <%  } else { %>
         <a href="/signup"> Sign up </a>
         <br>
