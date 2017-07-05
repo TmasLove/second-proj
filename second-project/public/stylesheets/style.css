@@ -2,6 +2,46 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+body.sign-up {
+  background-image: url(../images/apple.jpg);
+  background-size: cover;
+
+}
+
+body.login {
+  background-image: url(../images/mt.jpg);
+  background-size: cover;
+  margin: 0;
+}
+
+body.meme {
+  background-image: url(../images/pink-dust.png);
+}
+body.feed {
+  background-image: url(../images/pink-dust.png);
+}
+
+body.user-profile {
+  background-image: url(../images/pink-dust.png);
+}
+
+a.icon2 {
+  position: relative;
+  left: 45px;
+  bottom: 35px;
+}
+
+canvas {
+  background: rgba(255, 255, 255, 0.60);
+
+}
+
+nav {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  background: rgba(255, 255, 255, 0.60);
+}
+
 h1.index {
   text-align: center;
 }
@@ -9,8 +49,9 @@ h1.index {
 a {
   color: #00B7FF;
 }
-a.log{
-  padding-left: 200px;
+button.log{
+position: relative;
+left: 200px;
 }
 
 .img {
@@ -38,18 +79,26 @@ img.android {
 
 .container2 {
   height: 300px;
-  width: 550px;
-  border: 1px dotted black;
-  position: relative;
-  left: 300px;
+width: 550px;
+border: 1px solid white;
+position: relative;
+left: 330px;
+background: rgba(255,255,255,0.4);
+top: 100px;
+border-radius: 15px;
+padding-top: 10px;
 }
 
 .container3 {
   height: 380px;
-  width: 550px;
-  left: 280px;
-  position: relative;
-  border: 1px solid black;
+width: 550px;
+left: 380px;
+position: relative;
+border: 1px solid white;
+top: 80px;
+background: rgba(255,255,255,0.4);
+border-radius: 15px;
+padding-top: 10px;
 
 }
 
@@ -122,17 +171,39 @@ p.signup {
 }
 
 .personal-info {
-  position: relative;
-left: 520px;
-bottom: 250px;
+      bottom: 250px;
+      height: 430px;
+      width: 500px;
+      border: 1px solid white;
+      position: relative;
+      left: 330px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 15px;
+      padding-top: 10px;
+      padding-left: 40px;
 }
 
+.col-md-8 {
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+}
 
 .form-horizontal {
   display: inline-block;
-  left: 50px;
+  height: 520px;
+  border: 1px solid white;
   position: relative;
+  left: 130px;
+  background: rgba(255,255,255,0.4);
+  width: 260px;
+  top: 35px;
+  padding-left: 15px;
+  border-radius: 15px;
+
 }
+
+
 
 /*//=============================================*/
 
@@ -190,6 +261,11 @@ width: 800px;
         cursor: pointer;
     }
 
+#send {
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
 
 #chose-file-style {
   background-color: lightsteelblue;
@@ -212,4 +288,31 @@ width: 550px;
 
 #aside {
   text-align: center;
+}
+
+/*===================================================*/
+/*index page view*/
+.main-text
+{
+    position: absolute;
+    top: 50px;
+    width: 96.66666666666666%;
+    color: #FFF;
+}
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear
+{
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    background-color: #FFF;
 }

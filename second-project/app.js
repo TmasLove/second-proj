@@ -77,6 +77,9 @@ app.use('/', myUserRoute);
 const myMemeRoute = require('./routes/create-meme.js');
 app.use('/', myMemeRoute);
 
+const myFeed = require('./routes/feed.js');
+app.use('/', myFeed);
+
 
 //ROUTES ^^ ------------------------------------------------------------------
 
