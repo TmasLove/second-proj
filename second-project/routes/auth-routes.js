@@ -5,6 +5,8 @@ const router = express.Router();
 const UserModel = require('../models/user-model.js');
 
 
+
+//signup
 router.get('/signup', (req, res, next) => {
   res.render('auth-views/signup-view.ejs');
 });
@@ -64,7 +66,7 @@ router.post('/login', passport.authenticate(
   'local', //1st argument -> name of the strategy
   //                            (determined by the strategy's npm package)
   { //2nd argument -> settings object
-    successRedirect: '/edit-user', //"successRedirect" (where to go if login worked)
+    successRedirect: '/generate-memes', //"successRedirect" (where to go if login worked)
     failureRedirect: '/login' //"failureRedirect" (where to go if login failed)
   }
 ));
@@ -91,6 +93,7 @@ router.get('/auth/facebook/callback',
 );
 
 // END SOCIAL LOGGINS ---------------------------------------
+
 
 
 

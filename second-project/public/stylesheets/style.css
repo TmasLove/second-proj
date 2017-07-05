@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -16,7 +15,7 @@ a.log{
 
 .img {
   position: relative;
-    left: 445px;
+  left: 500px;
     top: 15px;
 }
 
@@ -34,7 +33,7 @@ img.android {
   border: 1px dashed black;
   position: relative;
   text-align: center;
-  left: 450px;
+  left: 505px;
 }
 
 .container2 {
@@ -118,15 +117,14 @@ p.signup {
 /*USER PROFILE*/
 
 .left-column {
-  float: left;
+  position: relative;
+  top: 75px;
 }
 
 .personal-info {
   position: relative;
-}
-
-.left-column {
-  padding-right: 30px;
+left: 520px;
+bottom: 250px;
 }
 
 
@@ -134,5 +132,84 @@ p.signup {
   display: inline-block;
   left: 50px;
   position: relative;
-  bottom: 60px;
+}
+
+/*//=============================================*/
+
+/*Meme Generator*/
+
+.content-container {
+  margin-top: 50px;
+margin-bottom: 30px;
+margin-left: 180px;
+}
+
+.wrapper {
+  box-shadow: 1px 5px 5px 4.5px #DDDDDD;
+background: rgba(255, 255, 255, 0.60);
+border-radius: 35px;
+padding: 25px;
+padding-top: 15px;
+width: 800px;
+
+}
+/* Content styles*/
+#preview {
+    border: 2px solid #CCCCCC;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+    .inputfile + label {
+        vertical-align: middle;
+        width: 200px;
+        line-height: 18px;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.25em;
+        font-weight: 700;
+        color: white;
+        background-color: #222222;
+        display: inline-block;
+    }
+
+        .inputfile:focus + label,
+        .inputfile + label:hover {
+            background-color: 333333;
+            color: #DDDDDD;
+        }
+
+    .inputfile + label {
+        cursor: pointer;
+    }
+
+
+#chose-file-style {
+  background-color: lightsteelblue;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 2px;
+    width: 220px;
+}
+
+#create-greetings {
+  text-align: center;
+}
+
+hr {
+  border-color: orchid;
+width: 550px;
+}
+
+#aside {
+  text-align: center;
 }

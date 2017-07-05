@@ -4,7 +4,8 @@
 
 <% if(typeof currentUser === 'object') { %>
             <!-- If we got the logged in user variable  -->
-  <p> Hello, <%= currentUser.username%>! </p>
+  <p> Hello, <%= currentUser.username%>! <br>
+  <br>Welcome back, <%=currentUser.username%>. </p>
 <% } else { %>
         <!-- If we DIDNT GET the logged in user variable -->
     <h3> Please login to continue</h3>

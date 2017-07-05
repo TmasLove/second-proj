@@ -60,6 +60,8 @@ if (req.user) {
 // if you dont do next() your pages will load forever
   next();
 });
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 //ROUTES GO HERE ------------------------------------------------------------
 const index = require('./routes/index');
@@ -71,6 +73,9 @@ app.use('/', myAuthRoutes);
 
 const myUserRoute = require('./routes/user-profile.js');
 app.use('/', myUserRoute);
+
+const myMemeRoute = require('./routes/create-meme.js');
+app.use('/', myMemeRoute);
 
 
 //ROUTES ^^ ------------------------------------------------------------------

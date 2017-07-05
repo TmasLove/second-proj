@@ -1,40 +1,45 @@
- <!-- avatar and stuff -->
 
+<form method="post" action="/edit-user/update" class="form-horizontal" enctype="multipart/form-data">
+ <!-- avatar and stuff -->
+  <div class="left-column">
   <h1 class="page-header">Edit Profile</h1>
+
   <div class="row">
     <!-- left column -->
     <div class="left-column">
       <div class="text-center">
-        <img src="../../images/avatar.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <img src="/images/avatar.png" class="avatar img-circle img-thumbnail" alt="avatar">
         <h6>Upload a different photo...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <input type="file" class="filestyle" name="Choose File">
       </div>
     </div>
+  </div>
+</div>
+
 
 
     <!-- edit form column -->
 
     <div class="personal-info">
-      <form class="form-horizontal" role="form">
       <h3>Personal info</h3>
         <div class="form-group">
           <label class="control-label">First name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="John" type="text">
+            <input class="form-control" placeholder="John" type="text">
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Last name:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="Smith" type="text">
+            <input class="form-control" placeholder="Smith" type="text">
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" value="example@gmail.com" type="text">
+            <input class="form-control" placeholder="example@gmail.com" type="text">
           </div>
         </div>
         <div class="form-group">
@@ -42,7 +47,7 @@
           <div class="col-lg-8">
             <div class="ui-select">
               <select id="user_time_zone" class="form-control">
-                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                <option value="Hawaii"> (GMT-10:00) Hawaii </option>
                 <option value="Alaska">(GMT-09:00) Alaska</option>
                 <option value="Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option>
                 <option value="Arizona">(GMT-07:00) Arizona</option>
@@ -57,30 +62,30 @@
         <div class="form-group">
           <label class="col-md-3 control-label">Username:</label>
           <div class="col-md-8">
-            <input class="form-control" value="aNon" type="text">
+            <input class="form-control" placeholder="DarkLord" type="text">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Password:</label>
           <div class="col-md-8">
-            <input class="form-control" value=" " type="password">
+            <input class="form-control" placeholder="*****" type="password">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-3 control-label">Confirm password:</label>
           <div class="col-md-8">
-            <input class="form-control" value=" " type="password">
+            <input class="form-control" placeholder="*****" type="password">
           </div>
         </div>
+
         <div class="form-group">
           <label class="col-md-3 control-label"></label>
           <div class="col-md-8">
-            <input class="btn btn-primary" value="Save Changes" type="button">
+            <button> Save Changes </button>
             <span></span>
-            <input class="btn btn-default" value="Cancel" type="reset">
+            <button> Cancel </button>
           </div>
+        </form>
         </div>
-      </form>
     </div>
-  </div>
-</div>
+</form>

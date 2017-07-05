@@ -4,15 +4,17 @@ const Schema = mongoose.Schema;
 
 const myUserSchema = new Schema (
   {     //1st argument -> structure object
-    fullName: {type: String},
+    firstName: {type: String},
+    lastName: {type: String},
+    email: { type: String },
     username: {type: String},
+
     //SIGN UP/LOG IN FORM users --------
     encryptedPassword: {type: String},
 
-    //GOOGLE users-------------------------
-    googleId: {type: String},
     //FACEBOOK users----------------------
-    facebookId: {type: String}
+    facebookId: {type: String},
+
 
   },
   {     // 2nd argument -> additional settings

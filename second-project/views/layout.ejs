@@ -2,26 +2,71 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><%= title %></title>
+    <title>Follow Me.me</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- jQuery UI CSS file -->
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <!-- Spectrum CSS file (optional) -->
+    <link rel="stylesheet" type="text/css" href="/css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+    <!-- Meme Generator CSS file -->
   </head>
   <body>
     <nav>
-        <a href="/"> Home </a>
+      <!-- <div class="ui secondary  menu">
+
+        <a class="active item" href="/"> Home </a>
         <br>
     <% if (typeof currentUser === 'object') { %>
-        <a href="/edit-user"> Edit Profile </a>
-        <br>
-        <a href="/special"> Feed </a>
-        <br>
-        <a href="/logout"> Log Out </a>
+        <a class="item" href="/edit-user"> Edit Profile </a>
+        <a class="item" href="/generate-memes"> Create Memes </a>
+        <a class="item" href="/logout"> Log Out </a>
     <%  } else { %>
-        <a href="/signup"> Sign up </a>
-        <br>
-        <a href="/login"> Log In </a>
-        <br>
+        <a class="ui item" href="/signup"> Sign up </a>
+        <a class="ui item" href="/login"> Log In </a>
     <%  } %>
         <br>
+      </div> -->
+
+      <div class="ui secondary  menu">
+  <a class="item" href="/">
+    Home
+  </a>
+
+  <% if (typeof currentUser === 'object') { %>
+
+  <a class="item" href="/edit-user">
+    Edit Profile
+  </a>
+  <a class="item" href="/generate-memes">
+    New Meme
+  </a>
+
+  <%  } else { %>
+
+  <a class="item" href="/signup">
+    Sign Up
+  </a>
+  <a class="item" href="/login">
+    Log In
+  </a>
+
+  <%  } %>
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+    <a class="ui item" href="/logout">
+      Logout
+    </a>
+  </div>
+</div>
+
       </nav>
     </header>
 
@@ -29,5 +74,16 @@
 <%- body %>
 
 
-  </body>
+<!-- jQuery 1.11.3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- jQuery UI 1.11.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Spectrum plugin (optional) -->
+<script src="/js/spectrum.js"></script>
+
+<!-- Meme Generator plugin -->
+<script type="text/javascript" src="/js/jquery.memegenerator.min.js"></script>
+   </body>
 </html>
