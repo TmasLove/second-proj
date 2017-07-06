@@ -156,3 +156,9 @@ function downloadCanvas(link, canvasId, filename) {
 document.getElementById('download').addEventListener('click', function () {
     downloadCanvas(this, 'canvas', 'meme.png');
 }, false);
+
+document.getElementById('postMeme').addEventListener('click', function (e) {
+    const dataUri = document.getElementById('canvas').toDataURL();
+
+    document.getElementById('imageInput').value= dataUri;
+});

@@ -1,8 +1,8 @@
 <head>
-<link rel="stylesheet" type="text/css" href="Site.css">
-<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="Site.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="/js/memeScript.js"></script>
+<!-- <script src="/js/memeScript.js"></script> -->
 <title>MemeGenerator 1.0 </title>
 </head>
 <body class="meme">
@@ -21,9 +21,11 @@
                     </div>
                 </div>
                 <aside id="aside" hidden>
-                    <a class="icon" href="" id="download"><img id="send" src="./../../images/downloads.png"></a><br />
-                    <a class="icon2" href="" id="download"><img id="send" src="./../../images/send.ico"></a><br />
-
+                    <a class="icon" href="" id="download"><img id="send" src="/images/downloads.png"></a><br />
+                <form method="post" id="formid" action="/feed">
+                    <input name="imageData" id="imageInput">
+                    <button type="submit" class="icon2" id="postMeme"><img id="send" src="/images/send.ico"></button><br />
+                </form>
                     <div class="form-inline">
                         <div class="col-md-offset-2 col-md-8 form-group">
                             <input class="form-control tb" id="text-box1" type="text" placeholder="Top Text"><input class="form-control tb" id="size-font1" type="number" value="60" min="40" max="80" style="width: 60px; margin-left: 0;"><br>

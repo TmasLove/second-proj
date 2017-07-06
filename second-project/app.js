@@ -8,6 +8,9 @@ const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
 const session      = require('express-session');
 const passport    = require('passport');
+const multer       = require('multer');
+const upload = multer({ dest: 'uploads/' });
+
 
 //Import the "dotenv" package and load variales from the ".env" file
 //(must be at the top, before we try to use the )
@@ -31,8 +34,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '150mb' }));
+app.use(bodyParser.urlencoded({ limit: '150mb', extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
@@ -62,9 +65,15 @@ if (req.user) {
 });
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(multer({ dest: './feed/',
+//  rename: function (fieldname, filename) {
+//    return filename;
+//  },
+// }));
+
 
 //ROUTES GO HERE ------------------------------------------------------------
-const index = require('./routes/index');
+const index = require('./routes/index.js');
 app.use('/', index);
 
 const myAuthRoutes = require('./routes/auth-routes.js');
@@ -79,6 +88,9 @@ app.use('/', myMemeRoute);
 
 const myFeed = require('./routes/feed.js');
 app.use('/', myFeed);
+
+const myPost = require('./routes/meme-post.js');
+app.use('/', myPost);
 
 
 //ROUTES ^^ ------------------------------------------------------------------

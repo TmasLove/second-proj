@@ -1,27 +1,25 @@
 const express = require('express');
+
+const PostModel = require('../models/post-model.js');
+
 const router  = express.Router();
+// var multer  = require('multer');
+
 
 
 
 
 router.get('/feed', (req, res, next) => {
-  if(req.user) {
-    res.render('feed-view.ejs');
-  }
-  else {
-    res.redirect('/login');
-  }
+  PostModel.find((err, postResults) => {
+    if(err) {
+      next(err);
+      return;
+    }
+    res.render('feed-view.ejs', {
+      postsAndStuff: postResults
+    });
+  });
 });
-
-
-
-
-
-
-
-
-
-
 
 
 

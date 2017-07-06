@@ -1,39 +1,30 @@
 <body class="feed">
 
-<h4>Additional information</h4>
-<div class="ui feed segment">
-  <div class="event">
-    <div class="label">
-      <img src="/images/demo/avatar.jpg">
-    </div>
-    <div class="content">
-      <div class="date">
-        3 days ago
+
+<div class="column-grid-container">
+  <div class="ui three column grid">
+    <% postsAndStuff.forEach((onePost) => { %>
+      <div class="column">
+        <div class="ui fluid card">
+          <div class="image">
+            <img src="<%=onePost.image_path %>">
+          </div>
+          <div class="content">
+            <a class="header"><%= onePost.username%></a>
+          </div>
+        </div>
       </div>
-      <div class="summary">
-         <a>Sally Poodle</a> added 2 photos of you
-      </div>
-      <div class="extra images">
-        <img src="/images/demo/item1.jpg">
-        <img src="/images/demo/item2.jpg">
-      </div>
-    </div>
-  </div>
-  <div class="event">
-    <div class="label">
-      <img src="/images/demo/avatar.jpg">
-    </div>
-    <div class="content">
-      <div class="date">
-        3 days ago
-      </div>
-      <div class="summary">
-         <a>Sally Poodle</a> created a post
-      </div>
-      <div class="extra text">
-        I am a dog and I do not know how to make a post
-      </div>
-    </div>
+    <% }) %>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
 </body>
