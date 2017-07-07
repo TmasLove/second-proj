@@ -34,7 +34,9 @@ router.post('/signup', (req, res, next) => {
 
 
   const theUser = new UserModel({
-    fullName: req.body.signupFullName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    // email: req.body.email,
     username: req.body.signupUserName,
     encryptedPassword: scrambledPassword
   });
@@ -77,23 +79,6 @@ router.get('/logout', (req, res, next) => {
   req.logout();
   res.redirect('/');
 });
-
-// SOCIAL LOGINS ------------------------------------
-// determines by the strategy's npm package
-//                       |
-router.get('/auth/facebook', passport.authenticate('facebook'));
-router.get('/auth/facebook/callback',
-  passport.authenticate(
-    'facebook', {
-      successRedirect: '/edit-user',
-      failureRedirect: '/login'
-
-    }
-  )
-);
-
-// END SOCIAL LOGGINS ---------------------------------------
-
 
 
 

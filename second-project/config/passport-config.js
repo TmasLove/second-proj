@@ -64,7 +64,10 @@ passport.use(new LocalStrategy(
           return;
         }
         // #2 If there is a user with that username, is the PASSWORD correct?
-        if(bcrypt.compareSync(formPassword, userFromDb.encryptedPassword)=== false) {
+        console.log('PASS ' + formPassword);
+        console.log('USER ' + userFromDb);
+        console.log('PW ' + userFromDb.encryptedPassword);
+        if(bcrypt.compareSync(formPassword, userFromDb.encryptedPassword) === false) {
           //in passport, if you call next() with "false" in 2nd position,
           // that means LOGIN FAILED
 
@@ -78,50 +81,3 @@ passport.use(new LocalStrategy(
   })
 
 );
-
-// passport-facebook (log in with facebook account)
-const FbStrategy = require('passport-facebook').Strategy;
-
-passport.use(new FbStrategy(
-  {  //1st argument -> settings object
-    clientID: process.env.FacebookClientId,
-    clientSecret: process.env.clientSecret,
-    callbackURL: '/auth/facebook/callback'
-  },          // OUR route (name this whatever you want)
-
-  (accessToken, refreshToken, profile, next) => {  //2nd argument -> callback
-            // (will be called when a user allows us to log them in with facebook)
-        console.log('');
-        console.log('-----------🌎 FACEBOOK PROFILE INFO 🌎 ------------');
-        console.log(profile);
-        console.log('');
-
-        UserModel.findOne(
-          {facebookId: profile.id},
-          (err, userFromDb) => {
-              //"userFromDb" will be empty if this is first time the user logs in with facebook
-              // check if they have logged in before
-              if(userFromDb) {
-                next(null, userFromDb);
-                return;
-              }
-
-              // If it's the first time they log in, SAVE THEM IN THE DB!
-              const theUser = new UserModel({
-                fullName: profile.displayName,
-                facebookId: profile.id
-              });
-              theUser.save((err) => {
-                if (err) {
-                  next(err);
-                  return;
-                }
-                next(null, theUser);
-              });
-          }
-        );
-            // Receiving the facebook user info and SAVING IT!
-            // UNLESS we have already saved their info, in which case we log them in.
-  }
-
-));

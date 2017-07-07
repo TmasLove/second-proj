@@ -1,4 +1,3 @@
-<body class="user-profile">
 
 <form method="post" action="/edit-user/update" class="form-horizontal" enctype="multipart/form-data">
  <!-- avatar and stuff -->
@@ -16,32 +15,28 @@
     </div>
   </div>
 </div>
+</form>
 
 
 
     <!-- edit form column -->
+<form method="post" action="/saveuser">
     <div class="personal-info">
       <h3>Personal info</h3>
         <div class="form-group">
           <label class="control-label">First name:</label>
           <div class="col-lg-8">
-            <input class="form-control" placeholder="John" type="text">
+            <input class="form-control" placeholder="<%= user.firstName %>" name="firstName" type="text">
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label">Last name:</label>
           <div class="col-lg-8">
-            <input class="form-control" placeholder="Smith" type="text">
+            <input class="form-control" placeholder="Smith" name="<%= user.lastName %>" type="text">
           </div>
         </div>
 
-        <div class="form-group">
-          <label class="control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control" placeholder="example@gmail.com" type="text">
-          </div>
-        </div>
         <div class="form-group">
           <label class="control-label">Time Zone:</label>
           <div class="col-lg-8">
@@ -62,19 +57,7 @@
         <div class="form-group">
           <label class="col-md-3 control-label">Username:</label>
           <div class="col-md-8">
-            <input class="form-control" placeholder="DarkLord" type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Password:</label>
-          <div class="col-md-8">
-            <input class="form-control" placeholder="*****" type="password">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-md-3 control-label">Confirm password:</label>
-          <div class="col-md-8">
-            <input class="form-control" placeholder="*****" type="password">
+            <input class="form-control" placeholder=" <%= user.username %>" name="username" type="text">
           </div>
         </div>
 
@@ -83,11 +66,40 @@
           <div class="col-md-8">
             <button> Save Changes </button>
             <span></span>
-            <button> Cancel </button>
           </div>
-        </form>
-        </div>
+          </div>
     </div>
-</form>
+  </form>
 </div>
-</body>
+
+<div class="updated-info">
+  <ul>
+
+    <li>
+      <b>Username:</b> <%= user.username %>
+    </li>
+<br>
+
+    <li>
+      <b>First Name:</b> <%= user.firstName %>
+    </li>
+<br>
+
+    <li>
+      <b>Last Name:</b>  <%= user.lastName %>
+    </li>
+<br>
+
+
+  </ul>
+</div>
+
+
+
+<style>
+body {
+  background:url('/images/black.jpg')!important;
+  font-family: 'Open Sans', sans-serif;
+
+}
+</style>

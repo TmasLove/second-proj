@@ -6,15 +6,9 @@ const myUserSchema = new Schema (
   {     //1st argument -> structure object
     firstName: {type: String},
     lastName: {type: String},
-    email: { type: String },
+    // email: { type: String },
     username: {type: String},
-
-    //SIGN UP/LOG IN FORM users --------
-    encryptedPassword: {type: String},
-
-    //FACEBOOK users----------------------
-    facebookId: {type: String},
-
+    encryptedPassword: {type: String}
 
   },
   {     // 2nd argument -> additional settings

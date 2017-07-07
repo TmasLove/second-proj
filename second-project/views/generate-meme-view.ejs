@@ -5,14 +5,12 @@
 <!-- <script src="/js/memeScript.js"></script> -->
 <title>MemeGenerator 1.0 </title>
 </head>
-<body class="meme">
 
     <div class="content-container">
         <div class="wrapper text-center">
             <div class="row">
-                <h1 style="font: 40px Lato" id="create-greetings"><b>Create New Meme</b></h1>
-                <hr>
-                <canvas width="750" height="500" id="canvas" style="border: 1px solid #224364"></canvas><br>
+                <h1 style="font: 40px Lato; color: floralwhite;" id="create-greetings"><b>Create New Meme</b></h1>
+                <canvas width="750" height="500" id="canvas" style="border: 1px solid rebeccapurple;"></canvas><br>
                 <div id="chose-file-style" class="row" style="margin-top: 10px;margin-bottom: 10px;margin-left: 250px;text-align: center;">
                     <div class="col-md-offset-4 col-md-2">
                         <input type="file" name="file" id="file" class="inputfile" />
@@ -23,8 +21,8 @@
                 <aside id="aside" hidden>
                     <a class="icon" href="" id="download"><img id="send" src="/images/downloads.png"></a><br />
                 <form method="post" id="formid" action="/feed">
-                    <input name="imageData" id="imageInput">
-                    <button type="submit" class="icon2" id="postMeme"><img id="send" src="/images/send.ico"></button><br />
+                    <input name="imageData" id="imageInput" type="hidden">
+                    <button type="submit" class="icon2" id="postMeme"><img id="send" src="/images/send.png"></button><br />
                 </form>
                     <div class="form-inline">
                         <div class="col-md-offset-2 col-md-8 form-group">
@@ -39,4 +37,11 @@
             </div>
         </div>
 <script src="/js/memeScript.js"></script>
-</body>
+<style>
+body {
+  background:url('/images/cow.png')!important;
+  background-size: cover !important;
+  font-family: 'Open Sans', sans-serif;
+
+}
+</style>

@@ -80,7 +80,7 @@ const myAuthRoutes = require('./routes/auth-routes.js');
 app.use('/', myAuthRoutes);
 
 
-const myUserRoute = require('./routes/user-profile.js');
+const myUserRoute = require('./routes/user-profile');
 app.use('/', myUserRoute);
 
 const myMemeRoute = require('./routes/create-meme.js');
