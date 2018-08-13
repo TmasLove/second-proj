@@ -637,3 +637,7 @@ box-shadow: 1px 0px 6px 6.5px #4ecdc4;
   padding-top: 1px;
 
 }
+
+/* media query starts here */
+
+@media only screen and (max-width: 500px)

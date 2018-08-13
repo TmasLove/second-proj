@@ -11,18 +11,16 @@ const passport    = require('passport');
 const multer       = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
-
+const app = express();
 //Import the "dotenv" package and load variales from the ".env" file
 //(must be at the top, before we try to use the )
-require('dotenv').config();
+// require('dotenv').config();
 
 require('./config/passport-config.js');
 
 
 mongoose.connect(process.env.MONGODB_URI);
 
-
-const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
